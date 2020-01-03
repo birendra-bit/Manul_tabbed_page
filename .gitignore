@@ -1,0 +1,10 @@
+.vs/
+TabView.sln
+TabView/TabView/bin/
+TabView/TabView/obj/
+TabView/TabView.Android/bin/
+TabView/TabView.Android/obj/
+TabView/TabView.iOS/bin/
+TabView/TabView.iOS/obj/
+TabView/TabView.UWP/bin/
+TabView/TabView.UWP/obj/

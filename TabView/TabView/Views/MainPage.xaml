@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TabView"
+             x:Class="TabView.MainPage"
+             Padding="0"
+            >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ScrollView">
+                <Setter Property="HeightRequest" Value="560"/>
+                <Setter Property="WidthRequest" Value="370"/>
+                <Setter Property="HorizontalScrollBarVisibility" Value="Never"/>
+                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+                <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style x:Key="tabBar" TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="80"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Orientation" Value="Horizontal"/>
+            </Style>
+            <Style TargetType="Frame">
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+            <Style TargetType="Image">
+                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="Margin" Value="-10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="580"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ScrollView x:Name="content"></ScrollView>
+        <StackLayout Grid.Row="1" Style="{StaticResource tabBar}">
+            <Frame x:Name="homePage">
+                <StackLayout>
+                    <Image x:Name="homeBtn"/>
+                </StackLayout>
+            </Frame>
+            <Frame x:Name="accPage">
+                <StackLayout>
+                    <Image x:Name="accountBtn"/>
+                </StackLayout>
+            </Frame>
+            <Frame x:Name="setPage">
+                <StackLayout>
+                    <Image x:Name="settingBtn"/>
+                </StackLayout>
+            </Frame>
+            <Frame x:Name="musicPage">
+                <StackLayout>
+                    <Image x:Name="musicBtn"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>

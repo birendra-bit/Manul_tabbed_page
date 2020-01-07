@@ -1,55 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:TabView.ViewModel"
              x:Class="TabView.Home"
              >
-    <ContentView.Resources>
-        <ResourceDictionary>
-            <Style x:Key="container" TargetType="StackLayout">
-                <Setter Property="Margin" Value="0"/>
-                <Setter Property="VerticalOptions" Value="StartAndExpand"/>
-                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="Spacing" Value="0"/>
-            </Style>
-            <Style x:Key="cover" TargetType="StackLayout" BasedOn="{StaticResource container}">
-                <Setter Property="HeightRequest" Value="150"/>
-                <Setter Property="WidthRequest" Value="360"/>
-                <Setter Property="BackgroundColor" Value="LightCyan"/>
-            </Style>
-
-            <Style TargetType="Image">
-                <Setter Property="HeightRequest" Value="100"/>
-                <Setter Property="WidthRequest" Value="100"/>
-                <Setter Property="Aspect" Value="AspectFill"/>
-                <!--<Setter Property="Margin" Value="-20"/>-->
-            </Style>
-            <Style x:Key="content" TargetType="StackLayout" BasedOn="{StaticResource cover}">
-                <Setter Property="BackgroundColor" Value="LightGoldenrodYellow"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
-            </Style>
-
-        </ResourceDictionary>
-    </ContentView.Resources>
     <ContentView.Content>
-        <StackLayout>
-            
+        <StackLayout HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <Label Text="{Binding DateTime, StringFormat='{0:T}'}"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold">
+                <Label.BindingContext>
+                    <local:ClockViewModal/>
+                </Label.BindingContext>
+            </Label>
         </StackLayout>
-        <!--<StackLayout Style="{StaticResource container }">
-            <StackLayout Style="{StaticResource cover}">
-            </StackLayout>
-            <StackLayout Style="{StaticResource content}">
-                <RelativeLayout>
-                    <Image Source="user.png"
-                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=0.5, Constant=-50}"
-                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Factor=0,Property=Y,Constant=-50}"/>
-                </RelativeLayout>
-                <Label Text="Name: Birendra" VerticalOptions="Start"/>
-                <Label Text="Bhutan"/>
-                <Label Text="phone number"/>
-            </StackLayout>
-        </StackLayout>-->
+        
     </ContentView.Content>
 </ContentView>

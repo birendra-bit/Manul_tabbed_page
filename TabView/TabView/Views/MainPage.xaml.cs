@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Diagnostics;
+using TabView.ViewModel;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TabView
@@ -7,11 +10,14 @@ namespace TabView
 
     public partial class MainPage : ContentPage
     {
+
         public MainPage()
         {
             InitializeComponent();
-            content.Content = new Home();
-            DefaultValues();
+
+            //BindingContext = new AccountViewModal();
+
+            //var viewmodel = this.BindingContext as AccountViewModal;
 
             var tapEvent = new TapGestureRecognizer();
             tapEvent.Tapped += TapEvent_Tapped;
@@ -28,6 +34,8 @@ namespace TabView
             var musicTap = new TapGestureRecognizer();
             musicTap.Tapped += MusicTap_Tapped;
             musicPage.GestureRecognizers.Add(musicTap);
+
+            TapEvent_Tapped(null, null);
 
         }
 

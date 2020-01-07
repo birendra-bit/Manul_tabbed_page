@@ -30,7 +30,7 @@
     </ContentView.Resources>
     <StackLayout >
         <SearchBar Placeholder="search contacts"/>
-        <ListView ItemsSource="{Binding UserAccounts}" Style="{StaticResource list}" SelectionMode="None">
+        <ListView ItemsSource="{Binding UserAccounts}" Style="{StaticResource list}" SelectionMode="None" ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

@@ -1,14 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using TabView.Modal;
+using Xamarin.Forms;
 
 namespace TabView.ViewModel
 {
     public class AccountViewModal
     {
         public IList<UserAccount> UserAccounts { get; set; }
+
+        public ICommand FrameTapCommand { get; set; }
+
         public AccountViewModal()
+        {
+            GenerateList();
+
+            //FrameTapCommand = new Command(FrameTappped);
+        }
+
+        private void FrameTappped(object obj)
+        {
+            string param = obj.ToString();
+
+        }
+
+        private void GenerateList()
         {
             UserAccounts = new List<UserAccount>();
 
@@ -90,5 +108,6 @@ namespace TabView.ViewModel
                 CallImage = "call.png"
             });
         }
+
     }
 }

@@ -45,6 +45,9 @@
         <ScrollView x:Name="content"></ScrollView>
         <StackLayout Grid.Row="1" Style="{StaticResource tabBar}">
             <Frame x:Name="homePage">
+                <!--<Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FrameTapCommand}" CommandParameter="homePage"/>
+                </Frame.GestureRecognizers>-->
                 <StackLayout>
                     <Image x:Name="homeBtn"/>
                 </StackLayout>

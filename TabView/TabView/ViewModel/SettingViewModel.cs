@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TabView.Modal;
 
 namespace TabView.ViewModel
@@ -7,6 +8,11 @@ namespace TabView.ViewModel
     {
         public IList<SettingItems> settingItems { get; set; }
         public SettingViewModel()
+        {
+            generateSettingList();
+        }
+
+        private void generateSettingList()
         {
             settingItems = new List<SettingItems>();
             settingItems.Add(new SettingItems
